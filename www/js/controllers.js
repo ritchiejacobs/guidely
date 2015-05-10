@@ -31,6 +31,8 @@ angular.module('starter.controllers', [])
   }
 
   function setMarkers(map) {
+    var prevInfo;
+
     var locations = [
       ['Bondi Beach', 51.21945, 4.40446, 4],
       ['Coogee Beach', 51.22399, 4.40166, 3],
@@ -58,6 +60,9 @@ angular.module('starter.controllers', [])
       });
 
       google.maps.event.addListener(marker, 'click', function() {
+        if (prevInfo) { prevInfo.close(); }
+        prevInfo = infowindow;
+        map.panTo(marker.position);
         infowindow.open(marker.get('map'), marker);
       });
     }
