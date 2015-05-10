@@ -33,69 +33,62 @@ angular.module('starter.controllers', [])
   function setMarkers(map) {
     var prevInfo;
 
-    var locations = [
-      ['Bondi Beach', 51.21945, 4.40446, 4],
-      ['Coogee Beach', 51.22399, 4.40166, 3],
-      ['Cronulla Beach', 51.21295, 4.40600, 2],
-      ['Manly Beach', 51.21545, 4.40000, 1],
-    ];
-
     var messages = [
       {
         'latitude': 51.21945,
         'longitude': 4.40446,
-        'icon': '../img/avatar.jpg',
-        'name': 'Tour through Antwerp Center',
+        'icon': '../img/avatar1.png',
+        'name': 'Antwerp Center Monuments',
         'location': 'Antwerp, Flanders, Belgium',
         'rating': 5,
         'reviewCount': '8',
         'duration': '01:30',
         'type': 'Cultural',
-        'guide': 'John Doe',
-        'price': '€15'
+        'guide': 'Jane Doe',
+        'price': '€10'
       },
       {
         'latitude': 51.22399,
         'longitude': 4.40166,
-        'icon': '../img/avatar.jpg',
-        'name': 'Best Shopping Spots Antwerp',
+        'icon': '../img/avatar2.png',
+        'name': 'St. Andrews Pub Crawl',
         'location': 'Antwerp, Flanders, Belgium',
         'rating': 4,
         'reviewCount': '12',
-        'duration': '01:30',
-        'type': 'Shopping',
+        'duration': '04:00',
+        'type': 'Nightlife',
         'guide': 'Billy Gates',
         'price': '€15'
       },
       {
         'latitude': 51.21295,
         'longitude': 4.40600,
-        'icon': '../img/avatar.jpg',
-        'name': 'History of FC Antwerp',
+        'icon': '../img/avatar3.png',
+        'name': 'A Walk In The Park',
         'location': 'Antwerp, Flanders, Belgium',
         'rating': 3,
         'reviewCount': '2',
         'duration': '00:30',
-        'type': 'Sports',
+        'type': 'Parks',
         'guide': 'Steven Jobs',
-        'price': '€15'
+        'price': '€6.50'
       },
       {
         'latitude': 51.21545,
         'longitude': 4.40000,
-        'icon': '../img/avatar.jpg',
-        'name': 'St. Andrews Pub Crawl',
+        'icon': '../img/avatar4.png',
+        'name': 'Best Shopping Spots Antwerp',
         'location': 'Antwerp, Flanders, Belgium',
         'rating': 5,
         'reviewCount': '7',
         'duration': '02:00',
-        'type': 'Nightlife',
-        'guide': 'Harry Page',
+        'type': 'Shopping',
+        'guide': 'Mary Page',
         'price': 'free'
       }
     ];
 
-    for (var i = 0; i < locations.length; i++) {
+    for (var i = 0; i < messages.length; i++) {
       var lat = messages[i].latitude;
       var lng = messages[i].longitude;
       var marker = new google.maps.Marker({
