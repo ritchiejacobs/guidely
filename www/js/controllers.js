@@ -40,7 +40,7 @@ angular.module('starter.controllers', [])
       ['Manly Beach', 51.21545, 4.40000, 1],
     ];
 
-    var messages = ['This', 'is', 'the', 'secret', 'message'];
+    var messages = ['Antwerpen centrum', 'Title 2', 'Title 3', 'Title 4'];
 
     for (var i = 0; i < locations.length; i++) {
       var location = locations[i];
@@ -56,7 +56,18 @@ angular.module('starter.controllers', [])
 
     function setMarkerMessage(marker, num) {
       var infowindow = new google.maps.InfoWindow({
-        content: messages[num]
+        maxWidth: 300,
+        content:
+        '<div class="info">' +
+          '<h2>' + messages[num] + '</h2>' +
+          '<ul>' +
+            '<li>test</li>' +
+            '<li>test</li>' +
+            '<li>test</li>' +
+            '<li>test</li>' +
+          '</ul>' +
+          '<button class="button button-block button-positive">Bekijk tour</button>' +
+        '</div>'
       });
 
       google.maps.event.addListener(marker, 'click', function() {
