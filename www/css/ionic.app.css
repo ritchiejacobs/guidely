@@ -7674,3 +7674,24 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.tourinfo {
+  color: #555;
+  text-align: center; }
+  .tourinfo h1 {
+    color: #555;
+    font-size: 1.5em;
+    font-weight: bold; }
+  .tourinfo p, .tourinfo li {
+    font-size: 1.1em; }
+  .tourinfo i {
+    font-size: 1.5em; }
+    .tourinfo i.ion-android-star {
+      color: #ffc900; }
+  .tourinfo li {
+    display: inline-block;
+    margin-top: 0.5em;
+    width: 50%; }
+    .tourinfo li i {
+      display: block;
+      font-size: 1.8em; }
