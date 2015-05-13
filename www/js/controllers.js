@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function($scope, Tours) {
 
   if (document.readyState === "complete") {
     initMap();
@@ -32,96 +32,38 @@ angular.module('starter.controllers', [])
 
   function setMarkers(map) {
     var prevInfo;
+    var tours = Tours.all();
 
-    var messages = [
-      {
-        'id': 1,
-        'latitude': 51.21945,
-        'longitude': 4.40446,
-        'icon': '../img/avatar1.png',
-        'name': 'Antwerp Center Monuments',
-        'location': 'Antwerp, Flanders, Belgium',
-        'rating': 5,
-        'reviewCount': '8',
-        'duration': '01:30',
-        'type': 'Cultural',
-        'guide': 'Jane Doe',
-        'price': '€10'
-      },
-      {
-        'id': 2,
-        'latitude': 51.22399,
-        'longitude': 4.40166,
-        'icon': '../img/avatar2.png',
-        'name': 'St. Andrews Pub Crawl',
-        'location': 'Antwerp, Flanders, Belgium',
-        'rating': 4,
-        'reviewCount': '12',
-        'duration': '04:00',
-        'type': 'Nightlife',
-        'guide': 'Billy Gates',
-        'price': '€15'
-      },
-      {
-        'id': 3,
-        'latitude': 51.21295,
-        'longitude': 4.40600,
-        'icon': '../img/avatar3.png',
-        'name': 'A Walk In The Park',
-        'location': 'Antwerp, Flanders, Belgium',
-        'rating': 3,
-        'reviewCount': '2',
-        'duration': '00:30',
-        'type': 'Parks',
-        'guide': 'Steven Jobs',
-        'price': '€6.50'
-      },
-      {
-        'id': 4,
-        'latitude': 51.21545,
-        'longitude': 4.40000,
-        'icon': '../img/avatar4.png',
-        'name': 'Best Shopping Spots Antwerp',
-        'location': 'Antwerp, Flanders, Belgium',
-        'rating': 5,
-        'reviewCount': '7',
-        'duration': '02:00',
-        'type': 'Shopping',
-        'guide': 'Mary Page',
-        'price': 'free'
-      }
-    ];
-
-    for (var i = 0; i < messages.length; i++) {
-      var lat = messages[i].latitude;
-      var lng = messages[i].longitude;
+    for (var i = 0; i < tours.length; i++) {
+      var lat = tours[i].latitude;
+      var lng = tours[i].longitude;
       var marker = new google.maps.Marker({
           position: new google.maps.LatLng(lat, lng),
           map: map,
-          icon: messages[i].icon,
-          title: messages[i].name
+          icon: tours[i].icon,
+          title: tours[i].name
       });
       setMarkerMessage(marker, i);
     }
 
     function setMarkerMessage(marker, num) {
       var rating = '';
-      for (var i = 0; i < messages[num].rating; i++) { rating += '<i class="icon ion-android-star"></i>' }
+      for (var i = 0; i < tours[num].rating; i++) { rating += '<i class="icon ion-android-star"></i>' }
 
       var infowindow = new google.maps.InfoWindow({
         maxWidth: 300,
         content:
         '<div class="tourinfo">' +
-          '<h1>' + messages[num].name + '</h1>' +
-          '<p>' + messages[num].location + '</p>' +
-          '<p>' + rating + ' (' + messages[num].reviewCount + ')</p>' +
+          '<h1>' + tours[num].name + '</h1>' +
+          '<p>' + tours[num].location + '</p>' +
+          '<p>' + rating + ' (' + tours[num].reviewCount + ')</p>' +
           '<ul>' +
-            '<li><i class="icon ion-ios-stopwatch"></i> <b>Duration:</b> ' + messages[num].duration + '</li>' +
-            '<li><i class="icon ion-android-map"></i> <b>Type:</b> ' + messages[num].type + '</li>' +
-            '<li><i class="icon ion-ios-person"></i> <b>Guide:</b> ' + messages[num].guide + '</li>' +
-            '<li><i class="icon ion-ios-pricetag"></i> <b>Price:</b> ' + messages[num].price + '</li>' +
+            '<li><i class="icon ion-ios-stopwatch"></i> <b>Duration:</b> ' + tours[num].duration + '</li>' +
+            '<li><i class="icon ion-android-map"></i> <b>Type:</b> ' + tours[num].type + '</li>' +
+            '<li><i class="icon ion-ios-person"></i> <b>Guide:</b> ' + tours[num].guide + '</li>' +
+            '<li><i class="icon ion-ios-pricetag"></i> <b>Price:</b> ' + tours[num].price + '</li>' +
           '</ul>' +
-          '<a class="button button-block button-positive" href="#/tab/tours/'+ messages[num].id +'">View tour</a>' +
+          '<a class="button button-block button-positive" href="#/tab/tours/'+ tours[num].id +'">View tour</a>' +
         '</div>'
       });
 
@@ -137,8 +79,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ToursCtrl', function($scope, $stateParams, Tours) {
-  console.log("[ToursCtrl]");
-  console.log( Tours.get($stateParams.tourId) );
   $scope.tour = Tours.get($stateParams.tourId);
 })
 
