@@ -48,6 +48,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.tour-detail', {
+    url: '/tours/tour-detail',
+    views: {
+      'tab-home': {
+        templateUrl: "templates/tour-detail.html"
+      }
+    }
+  })
+
   .state('tab.search', {
       url: '/search',
       views: {
@@ -58,11 +67,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.tours', {
-    url: '/tours',
+  .state('tab.reservations', {
+    url: '/reservations',
     views: {
-      'tab-tours': {
-        templateUrl: 'templates/tab-tours.html',
+      'tab-reservations': {
+        templateUrl: 'templates/tab-reservations.html',
         controller: 'ToursCtrl'
       }
     }

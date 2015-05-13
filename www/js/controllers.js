@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope) {
+  console.log("HomeCtrl");
 
   if (document.readyState === "complete") {
     initMap();
@@ -35,6 +36,7 @@ angular.module('starter.controllers', [])
 
     var messages = [
       {
+        'id': 1,
         'latitude': 51.21945,
         'longitude': 4.40446,
         'icon': '../img/avatar1.png',
@@ -48,6 +50,7 @@ angular.module('starter.controllers', [])
         'price': '€10'
       },
       {
+        'id': 2,
         'latitude': 51.22399,
         'longitude': 4.40166,
         'icon': '../img/avatar2.png',
@@ -61,6 +64,7 @@ angular.module('starter.controllers', [])
         'price': '€15'
       },
       {
+        'id': 3,
         'latitude': 51.21295,
         'longitude': 4.40600,
         'icon': '../img/avatar3.png',
@@ -74,6 +78,7 @@ angular.module('starter.controllers', [])
         'price': '€6.50'
       },
       {
+        'id': 4,
         'latitude': 51.21545,
         'longitude': 4.40000,
         'icon': '../img/avatar4.png',
@@ -117,7 +122,7 @@ angular.module('starter.controllers', [])
             '<li><i class="icon ion-ios-person"></i> <b>Guide:</b> ' + messages[num].guide + '</li>' +
             '<li><i class="icon ion-ios-pricetag"></i> <b>Price:</b> ' + messages[num].price + '</li>' +
           '</ul>' +
-          '<button class="button button-block button-positive">View tour</button>' +
+          '<a class="button button-block button-positive" href="#/tab/tours/tour-detail">View tour</a>' +
         '</div>'
       });
 
