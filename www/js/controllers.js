@@ -1,7 +1,6 @@
 angular.module('starter.controllers', [])
 
 .controller('HomeCtrl', function($scope) {
-  console.log("HomeCtrl");
 
   if (document.readyState === "complete") {
     initMap();
@@ -122,7 +121,7 @@ angular.module('starter.controllers', [])
             '<li><i class="icon ion-ios-person"></i> <b>Guide:</b> ' + messages[num].guide + '</li>' +
             '<li><i class="icon ion-ios-pricetag"></i> <b>Price:</b> ' + messages[num].price + '</li>' +
           '</ul>' +
-          '<a class="button button-block button-positive" href="#/tab/tours/tour-detail">View tour</a>' +
+          '<a class="button button-block button-positive" href="#/tab/tours/'+ messages[num].id +'">View tour</a>' +
         '</div>'
       });
 
@@ -137,6 +136,12 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('ToursCtrl', function($scope, $stateParams, Tours) {
+  console.log("[ToursCtrl]");
+  console.log( Tours.get($stateParams.tourId) );
+  $scope.tour = Tours.get($stateParams.tourId);
+})
+
 .controller('SearchCtrl', function($scope) {})
-.controller('ToursCtrl', function($scope) {})
+.controller('ReservationsCtrl', function($scope) {})
 .controller('SettingsCtrl', function($scope) {})

@@ -49,10 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   .state('tab.tour-detail', {
-    url: '/tours/tour-detail',
+    url: '/tours/:tourId',
     views: {
       'tab-home': {
-        templateUrl: "templates/tour-detail.html"
+        templateUrl: 'templates/tour-detail.html',
+        controller: 'ToursCtrl'
       }
     }
   })
@@ -72,7 +73,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-reservations': {
         templateUrl: 'templates/tab-reservations.html',
-        controller: 'ToursCtrl'
+        controller: 'ReservationsCtrl'
       }
     }
   })
