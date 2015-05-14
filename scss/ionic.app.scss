@@ -56,3 +56,28 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     }
   }
 }
+
+// Tour Detail view
+.tour-detail {
+  h3 {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+
+  .tour-details .col {
+    text-align: center;
+  }
+
+  .tour-reviews .stars {
+    margin-top: 0.5em;
+    text-align: center;
+
+    .icon {
+      padding: 0 0.1em;
+    }
+  }
+}

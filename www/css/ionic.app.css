@@ -7695,3 +7695,16 @@ a.button {
     .tourinfo li i {
       display: block;
       font-size: 1.8em; }
+
+.tour-detail h3 {
+  font-size: 1.1em;
+  text-align: center; }
+.tour-detail .icon {
+  font-size: 2em; }
+.tour-detail .tour-details .col {
+  text-align: center; }
+.tour-detail .tour-reviews .stars {
+  margin-top: 0.5em;
+  text-align: center; }
+  .tour-detail .tour-reviews .stars .icon {
+    padding: 0 0.1em; }
