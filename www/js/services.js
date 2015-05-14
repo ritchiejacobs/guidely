@@ -11,10 +11,12 @@ angular.module('starter.services', [])
       'location': 'Antwerp, Flanders, Belgium',
       'rating': 5,
       'reviewCount': '8',
+      'stars': [1, 2, 3, 4, 5],
       'duration': '01:30',
       'type': 'Cultural',
       'guide': 'Jane Doe',
-      'price': '€10'
+      'price': '€10',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aspernatur? Exercitationem iure, aliquam, hic nostrum natus quis omnis, nam nesciunt aut suscipit magnam necessitatibus. Laborum fuga accusamus veniam voluptates natus.'
     },
     {
       'id': 2,
@@ -25,10 +27,12 @@ angular.module('starter.services', [])
       'location': 'Antwerp, Flanders, Belgium',
       'rating': 4,
       'reviewCount': '12',
+      'stars': [1, 2, 3, 4],
       'duration': '04:00',
       'type': 'Nightlife',
       'guide': 'Billy Gates',
-      'price': '€15'
+      'price': '€15',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, placeat, laudantium tenetur officiis accusantium consequuntur fuga, velit magni quidem at dicta repellat doloremque sunt sit quasi voluptatem provident, modi expedita.'
     },
     {
       'id': 3,
@@ -39,10 +43,12 @@ angular.module('starter.services', [])
       'location': 'Antwerp, Flanders, Belgium',
       'rating': 3,
       'reviewCount': '2',
+      'stars': [1, 2, 3],
       'duration': '00:30',
       'type': 'Parks',
       'guide': 'Steven Jobs',
-      'price': '€6.50'
+      'price': '€6.50',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat ipsa dignissimos, assumenda commodi veritatis necessitatibus velit, eos laborum. Temporibus, nobis voluptatem, dolorem autem vel modi optio iure libero velit explicabo.'
     },
     {
       'id': 4,
@@ -53,10 +59,12 @@ angular.module('starter.services', [])
       'location': 'Antwerp, Flanders, Belgium',
       'rating': 5,
       'reviewCount': '7',
+      'stars': [1, 2, 3, 4, 5],
       'duration': '02:00',
       'type': 'Shopping',
       'guide': 'Mary Page',
-      'price': 'free'
+      'price': 'free',
+      'description': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque corrupti facilis suscipit quis soluta, distinctio labore nulla aliquam. Quia nostrum tempore eum porro velit maxime assumenda mollitia reprehenderit facere!'
     }
   ];
 
