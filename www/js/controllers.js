@@ -83,10 +83,13 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SearchCtrl', function($scope, Tours) {
-  $scope.tours = Tours.all();
-
   $scope.search = function() {
-    console.log( $scope.query );
+    $scope.tours = Tours.getLocation($scope.test);
+  }
+
+  $scope.cancel = function() {
+    $scope.test = null;
+    $scope.tours = [];
   }
 })
 
