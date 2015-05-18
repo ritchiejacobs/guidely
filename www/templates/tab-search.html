@@ -15,7 +15,7 @@
       Resulaten voor: {{test}}
     </div>
     <div class="list">
-      <a class="item item-thumbnail-left" href="#" ng-repeat="tour in tours">
+      <a class="item item-thumbnail-left" href="#/tab/results/{{tour.id}}" ng-repeat="tour in tours">
         <img src="{{tour.icon}}">
         <h2>{{tour.name}}</h2>
         <p>{{tour.location}}</p>
