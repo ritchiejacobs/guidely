@@ -1,5 +1,26 @@
 angular.module('starter.services', [])
 
+.factory('Reservations', function() {
+  var reservations = [
+    {
+      'id': 1,
+      'name': 'Antwerp Center Monuments',
+      'date': '19/07/05'
+    },
+    {
+      'id': 2,
+      'name': 'Best Shopping Spots Antwerp',
+      'date': '19/07/05'
+    }
+  ];
+
+  return {
+    all: function() {
+      return reservations;
+    }
+  }
+})
+
 .factory('Tours', function() {
   var tours = [
     {
@@ -97,4 +118,4 @@ angular.module('starter.services', [])
       return foundTours;
     }
   };
-});
+})

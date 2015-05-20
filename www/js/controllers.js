@@ -93,5 +93,8 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('ReservationsCtrl', function($scope) {})
+.controller('ReservationsCtrl', function($scope, Reservations) {
+  $scope.reservations = Reservations.all();
+})
+
 .controller('SettingsCtrl', function($scope) {})
