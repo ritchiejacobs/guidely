@@ -21,6 +21,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+// General
+.ion-android-star {
+  color: $energized;
+}
+
 // Home - infowindow
 .tourinfo {
   color: #555;
@@ -39,10 +44,6 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
   i {
     font-size: 1.5em;
-
-    &.ion-android-star {
-      color: $energized;
-    }
   }
 
   li {

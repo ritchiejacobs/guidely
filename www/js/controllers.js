@@ -82,6 +82,19 @@ angular.module('starter.controllers', [])
   $scope.tour = Tours.get($stateParams.tourId);
 })
 
-.controller('SearchCtrl', function($scope) {})
-.controller('ReservationsCtrl', function($scope) {})
+.controller('SearchCtrl', function($scope, Tours) {
+  $scope.search = function() {
+    $scope.tours = Tours.getLocation($scope.test);
+  }
+
+  $scope.cancel = function() {
+    $scope.test = null;
+    $scope.tours = [];
+  }
+})
+
+.controller('ReservationsCtrl', function($scope, Reservations) {
+  $scope.reservations = Reservations.all();
+})
+
 .controller('SettingsCtrl', function($scope) {})

@@ -1,5 +1,26 @@
 angular.module('starter.services', [])
 
+.factory('Reservations', function() {
+  var reservations = [
+    {
+      'id': 1,
+      'name': 'Antwerp Center Monuments',
+      'date': '19/07/05'
+    },
+    {
+      'id': 2,
+      'name': 'Best Shopping Spots Antwerp',
+      'date': '19/07/05'
+    }
+  ];
+
+  return {
+    all: function() {
+      return reservations;
+    }
+  }
+})
+
 .factory('Tours', function() {
   var tours = [
     {
@@ -9,6 +30,7 @@ angular.module('starter.services', [])
       'icon': '../img/avatar1.png',
       'name': 'Antwerp Center Monuments',
       'location': 'Antwerp, Flanders, Belgium',
+      'city': 'Antwerp',
       'rating': 5,
       'reviewCount': '8',
       'stars': [1, 2, 3, 4, 5],
@@ -25,6 +47,7 @@ angular.module('starter.services', [])
       'icon': '../img/avatar2.png',
       'name': 'St. Andrews Pub Crawl',
       'location': 'Antwerp, Flanders, Belgium',
+      'city': 'Antwerp',
       'rating': 4,
       'reviewCount': '12',
       'stars': [1, 2, 3, 4],
@@ -41,6 +64,7 @@ angular.module('starter.services', [])
       'icon': '../img/avatar3.png',
       'name': 'A Walk In The Park',
       'location': 'Antwerp, Flanders, Belgium',
+      'city': 'Antwerp',
       'rating': 3,
       'reviewCount': '2',
       'stars': [1, 2, 3],
@@ -57,6 +81,7 @@ angular.module('starter.services', [])
       'icon': '../img/avatar4.png',
       'name': 'Best Shopping Spots Antwerp',
       'location': 'Antwerp, Flanders, Belgium',
+      'city': 'Gent',
       'rating': 5,
       'reviewCount': '7',
       'stars': [1, 2, 3, 4, 5],
@@ -82,6 +107,15 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    getLocation: function(location) {
+      var foundTours = [];
+      angular.forEach(tours, function(tour) {
+        if (location.toLowerCase() == tour.city.toLowerCase()) {
+          foundTours.push(tour);
+        }
+      });
+      return foundTours;
     }
   };
-});
+})

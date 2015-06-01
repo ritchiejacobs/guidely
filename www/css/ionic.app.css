@@ -7675,6 +7675,9 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.ion-android-star {
+  color: #ffc900; }
+
 .tourinfo {
   color: #555;
   text-align: center; }
@@ -7686,8 +7689,6 @@ a.button {
     font-size: 1.1em; }
   .tourinfo i {
     font-size: 1.5em; }
-    .tourinfo i.ion-android-star {
-      color: #ffc900; }
   .tourinfo li {
     display: inline-block;
     margin-top: 0.5em;

@@ -1,4 +1,11 @@
 <ion-view view-title="Reservations">
   <ion-content>
+    <ul class="list">
+      <li class="item " ng-repeat="reservation in reservations">
+        {{reservation.name}}
+        <span class="item-note">{{reservation.date}}</span>
+        <!-- <i class="icon ion-ios-arrow-forward"></i> -->
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
